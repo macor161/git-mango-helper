@@ -85,7 +85,7 @@ Repo.prototype._ensureObjectMap = function (cb) {
 
 Repo.prototype.snapshotAdd = function (hash, cb) {
   // console.error('SNAPSHOT ADD', hash)
-  this.repoContract.addSnapshot(hash, cb)
+  this.repoContract.addSnapshot(hash, cb, { gas: 500000 })
 }
 
 Repo.prototype.snapshotGetAll = function (cb) {
@@ -107,7 +107,7 @@ Repo.prototype.contractGetRef = function (ref, cb) {
 
 Repo.prototype.contractSetRef = function (ref, hash, cb) {
   // console.error('REF SET', ref, hash)
-  this.repoContract.setRef(ref, hash, cb)
+  this.repoContract.setRef(ref, hash, cb, { gas: 500000 })
 }
 
 // FIXME: should be fully asynchronous
@@ -281,10 +281,10 @@ Repo.prototype.update = function (readRefUpdates, readObjects, cb) {
 
       if (update.new) {
         // FIXME: make this async
-        self.repoContract.setRef(update.name, update.new)
+        self.repoContract.setRef(update.name, update.new, { gas: 5000000 })
       } else {
         // FIXME: make this async
-        self.repoContract.deleteRef(update.name)
+        self.repoContract.deleteRef(update.name, { gas: 500000 })
       }
 
       readRefUpdates(null, next)
