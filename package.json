@@ -1,5 +1,5 @@
 {
-  "name": "git-remote-mango",
+  "name": "git-mango-helper",
   "version": "0.0.2",
   "description": "Git remote helper for Mango",
   "bin": "git-remote-mango",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/axic/git-remote-mango.git"
+    "url": "git+https://github.com/macor161/git-mango-helper.git"
   },
   "author": "Alex Beregszaszi <alex@rtfs.hu>",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/axic/git-remote-mango/issues"
+    "url": "https://github.com/macor161/git-remote-mango/issues"
   },
-  "homepage": "https://github.com/axic/git-remote-mango#readme",
+  "homepage": "https://github.com/macor161/git-mango-helper#readme",
   "keywords": [
     "git",
     "ethereum",
