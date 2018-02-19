@@ -2,7 +2,9 @@
   "name": "git-mango-helper",
   "version": "0.0.2",
   "description": "Git remote helper for Mango",
-  "bin": "git-remote-mango",
+  "bin": {  
+    "git-remote-mango": "git-remote-mango"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +15,7 @@
   "author": "Alex Beregszaszi <alex@rtfs.hu>",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/macor161/git-remote-mango/issues"
+    "url": "https://github.com/macor161/git-mango-helper/issues"
   },
   "homepage": "https://github.com/macor161/git-mango-helper#readme",
   "keywords": [
