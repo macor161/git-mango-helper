@@ -1,8 +1,8 @@
 {
   "name": "git-mango-helper",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Git remote helper for Mango",
-  "bin": {  
+  "bin": {
     "git-remote-mango": "git-remote-mango"
   },
   "scripts": {
