@@ -45,7 +45,6 @@ function ipfsGet (key, cb) {
 module.exports = Repo
 
 function Repo (address, user) {
-  // console.error('LOADING REPO', address)
 
   this.web3 = new Web3(new Web3.providers.HttpProvider(process.env['ETHEREUM_RPC_URL'] || 'http://localhost:8545'))
   try {
@@ -57,7 +56,6 @@ function Repo (address, user) {
 }
 
 Repo.prototype._loadObjectMap = function (cb) {
-  // console.error('LOADING OBJECT MAP')
   var self = this
   self._objectMap = {}
   self.snapshotGetAll(function (err, res) {
@@ -84,12 +82,10 @@ Repo.prototype._ensureObjectMap = function (cb) {
 }
 
 Repo.prototype.snapshotAdd = function (hash, cb) {
-  // console.error('SNAPSHOT ADD', hash)
   this.repoContract.addSnapshot(hash, cb, { gas: 500000 })
 }
 
 Repo.prototype.snapshotGetAll = function (cb) {
-  // console.error('SNAPSHOT GET ALL')
   var count = this.repoContract.snapshotCount().toNumber()
   var snapshots = []
 
