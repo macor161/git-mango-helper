@@ -2,13 +2,14 @@ var async = require('async')
 var pull = require('pull-stream')
 var multicb = require('multicb')
 var crypto = require('crypto')
-var IPFS = require('ipfs')
-var ipfs = new IPFS()
 var Web3 = require('web3')
 var rlp = require('rlp')
 var ethUtil = require('ethereumjs-util')
 var snapshot = require('./snapshot.js')
 var repoABI = require('./MangoRepoABI.json')
+var ipfsAPI = require('ipfs-api')
+
+var ipfs = ipfsAPI('localhost', '5002', {protocol: 'http'}) 
 
 // from https://github.com/clehner/memory-pull-git-repo
 function gitHash (obj, data) {
