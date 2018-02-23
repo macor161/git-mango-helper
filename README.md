@@ -1,8 +1,23 @@
-# git-remote-mango
+# git-mango-helper
 
-Git remote helper for [Mango](https://github.com/axic/mango).  Install via NPM.
+Git remote helper for [Mango](https://github.com/axic/mango).
 
-**Note:** this is one of the worst piece of spaghetti codes. Good enough for an initial proof of concept.
+## Install
+
+The package now uses an external IPFS node instead of one created from inside the code. Installing an IPFS node is fairly easy:
+
+```
+npm install -g ipfs
+```
+
+Then simply install `git-mango-helper` **globally**.
+
+```
+npm install -g git-mango-helper
+```
+
+This will install the `git-remote-mango` executable which will be used by git to support the `mango://` protocol.
+
 
 ## License
 
