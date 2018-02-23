@@ -32,7 +32,11 @@ Then simply use git normally with a mango address:
 git pull mango://0x890fe361f9ede4ad40a3cac75877f9cd1183e0ab
 ```
 
+## Future work
 
+Right now, `git-mango-helper` connects by default to an IPFS node at `localhost` port `5002`. A config command will be needed to work in production.
+
+A NodeJs library would also be useful.
 
 ## License
 
