@@ -18,6 +18,21 @@ npm install -g git-mango-helper
 
 This will install the `git-remote-mango` executable which will be used by git to support the `mango://` protocol.
 
+## Usage
+
+First, make sure you have an IPFS node running.
+
+```
+jsipfs daemon
+```
+
+Then simply use git normally with a mango address: 
+
+```
+git pull mango://0x890fe361f9ede4ad40a3cac75877f9cd1183e0ab
+```
+
+
 
 ## License
 
