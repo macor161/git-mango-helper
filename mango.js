@@ -21,25 +21,24 @@ function gitHash (obj, data) {
 
 // FIXME: move into context?
 function ipfsPut (buf, enc, cb) {
-  // console.error('-- IPFS PUT')
-  ipfs.object.put(buf, { enc }, function (err, node) {
+  //console.error('-- IPFS PUT')
+  ipfs.object.put({ Data: buf.toString('base64'), Links: [] }, function (err, node) {
     if (err) {
       return cb(err)
     }
 
-    cb(null, node.toJSON().Hash)
+    cb(null, node.toJSON().multihash)
   })
 }
 
 // FIXME: move into context?
 function ipfsGet (key, cb) {
-  // console.error('-- IPFS GET')
-  ipfs.object.get(key, { enc: 'base58' }, function (err, node) {
+  //console.error('-- IPFS GET ', key)
+  ipfs.object.get(key, function (err, node) {
     if (err) {
       return cb(err)
     }
-
-    cb(null, node.toJSON().Data)
+    cb(null, Buffer.from(node.toJSON().data.toString(), 'base64'))
   })
 }
 
